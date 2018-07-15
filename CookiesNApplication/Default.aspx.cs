@@ -14,6 +14,20 @@ namespace CookiesNApplication
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            /* Application demo */
+
+            Application.Lock();
+            int count = 0;
+            if (Application["HitCounterForOrderPage"] != null)
+                count = (int)Application["HitCounterForOrderPage"];
+            count++;
+            Application["HitCounterForOrderPage"] = count;
+            Application.UnLock();
+            totalDownloadsSpan.InnerText = count.ToString();
+
+
+            /* Coockies demo */
+
             subscriptionComlete.Visible = false;
             //читаем куки
             HttpCookie cookie = Request.Cookies["Preferences"];

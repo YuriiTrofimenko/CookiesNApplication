@@ -30,6 +30,9 @@
         <div>
             <span>Total count: </span><span><%= mTotalCount%></span>
         </div>
+        <div>
+            <span>Total downloads: </span><span runat="server" id="totalDownloadsSpan"></span>
+        </div>
     </form>
 </body>
 </html>
